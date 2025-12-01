@@ -46,7 +46,7 @@ This repository is my public notebook for exploring React Native concepts, anima
 - **Assets**  
   City images come from Unsplash with lightweight `?w=800&q=45` parameters to keep bundle sizes friendly while still showcasing each location.
 
-  ### 🎥 ScrollSynced Tab Bar Demo  
-  https://github.com/mauryavikash922/react-native-learning/blob/main/assets/scroll-synced-tabbar-demo.mp4
+  ### 🎥 ScrollSynced Tab Bar Demo
+  https://raw.githubusercontent.com/mauryavikash922/react-native-learning/main/assets/scroll-synced-tabbar-demo.mp4
 
 ---
