@@ -1,97 +1,54 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Learning Lab
 
-# Getting Started
+This repository is my public notebook for exploring React Native concepts, animations, and UI practices. Instead of keeping all the experiments local, I am sharing what I build so other developers can pick up ideas, learn from my mistakes, and remix the patterns for their own projects.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Why this exists
 
-## Step 1: Start Metro
+- **Teach by doing** – each feature is a hands-on experiment that documents what I learned while building it.
+- **Share practical snippets** – real project structure, not isolated gists, so you can see how everything fits together.
+- **Create a reference** – future implementations will live here too, giving me (and you) a growing library of React Native techniques.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Getting started locally
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+1. Install dependencies  
+   ```sh
+   yarn install
+   ```
+   (or `npm install` if you prefer npm)
 
-```sh
-# Using npm
-npm start
+2. Start Metro  
+   ```sh
+   yarn start
+   ```
 
-# OR using Yarn
-yarn start
-```
+3. Run on a device or simulator  
+   ```sh
+   yarn android   # Android
+   yarn ios       # iOS (remember to run pod install first)
+   ```
 
-## Step 2: Build and run your app
+## Learning snapshots
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### ScrollSynced Tab Bar (v1)
 
-### Android
+- **What it is**  
+  A vertically scrolling city guide where the tab bar stays in sync with the content. Selecting a tab scrolls to the matching section, and manual scrolling updates the active tab in real time.
 
-```sh
-# Using npm
-npm run android
+- **Why I built it**  
+  I wanted to understand how to coordinate complex gestures and scrolling with modern animation libraries. It is a common pattern in polished apps, and recreating it from scratch teaches a lot about layout measurement and shared state.
 
-# OR using Yarn
-yarn android
-```
+- **How it works**  
+  - `Animated.FlatList` renders the sections so I can subscribe to native scroll events.  
+  - `react-native-reanimated` (v3) powers the shared values and provides smooth indicator transitions in the tab bar.  
+  - `scheduleOnRN` from `react-native-worklets` bridges updates back to the JS thread when I need to trigger imperative scrolling.  
+  - Layout measurements (`onLayout`) collect the height of each section to map scroll offsets accurately.
 
-### iOS
+- **Assets**  
+  City images come from Unsplash with lightweight `?w=800&q=45` parameters to keep bundle sizes friendly while still showcasing each location.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+- **Next ideas**  
+  Add haptic feedback on tab switches, experiment with sticky headers, or feed the data from an API instead of static constants.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+---
 
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+If this project helps you, feel free to fork it, open issues, or drop suggestions for the next learning experiment! 
