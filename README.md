@@ -39,16 +39,14 @@ This repository is my public notebook for exploring React Native concepts, anima
 
 - **How it works**  
   - `Animated.FlatList` renders the sections so I can subscribe to native scroll events.  
-  - `react-native-reanimated` (v3) powers the shared values and provides smooth indicator transitions in the tab bar.  
+  - `react-native-reanimated` (v4) powers the shared values and provides smooth indicator transitions in the tab bar.  
   - `scheduleOnRN` from `react-native-worklets` bridges updates back to the JS thread when I need to trigger imperative scrolling.  
   - Layout measurements (`onLayout`) collect the height of each section to map scroll offsets accurately.
 
 - **Assets**  
   City images come from Unsplash with lightweight `?w=800&q=45` parameters to keep bundle sizes friendly while still showcasing each location.
 
-- **Next ideas**  
-  Add haptic feedback on tab switches, experiment with sticky headers, or feed the data from an API instead of static constants.
+  ### 🎥 ScrollSynced Tab Bar Demo  
+  https://github.com/mauryavikash922/react-native-learning/blob/main/assets/scroll-synced-tabbar-demo.mp4
 
 ---
-
-If this project helps you, feel free to fork it, open issues, or drop suggestions for the next learning experiment! 
