@@ -50,4 +50,25 @@ This repository is my public notebook for exploring React Native concepts, anima
   <img src="./assets/scroll-synced-tabbar-demo.gif" width="400" />
 
 
+### Scroll-Adaptive Sticky Footer (v1)
+
+- **What it is**  
+  A Myntra-inspired product detail page where the pricing CTA hugs the bottom of the screen until you reach the native "Add to Bag" section, then seamlessly promotes that section into view.
+
+- **Why I built it**  
+  Sticky purchase affordances are everywhere in commerce apps. Recreating the adaptive behavior helped me understand how big retailers keep the CTA visible without compromising long-form content.
+
+- **How it works**  
+  - `Animated.FlatList` renders the PDP sections so I can measure layout and track scroll progress in one place.  
+  - `react-native-reanimated` shared values (`useAnimatedScrollHandler`, `useAnimatedStyle`) decide when to dock or release the footer based on the measured y-offset of the "Add to Cart" block.  
+  - `onLayout` captures section heights once everything renders, letting me map list indices to cumulative offsets and mimic Myntra’s precise reveal timing.  
+  - A dedicated `theme` + rich `product` data set in `constants.ts` keep typography, colors, and copy consistent with the Myntra aesthetic.
+
+- **Assets**  
+  Product photography and related styles are sourced from Unsplash (with resizing query params) and stitched into a lightweight gallery + related carousel.
+
+  ### 🎥 Scroll-Adaptive Sticky Footer Demo
+  <img src="./assets/stickyFooterDemo.gif" width="400" />
+
+
 ---
