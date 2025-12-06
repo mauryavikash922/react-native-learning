@@ -47,7 +47,7 @@ This repository is my public notebook for exploring React Native concepts, anima
   City images come from Unsplash with lightweight `?w=800&q=45` parameters to keep bundle sizes friendly while still showcasing each location.
 
   ### 🎥 ScrollSynced Tab Bar Demo
-  ![ScrollSynced Tab Bar Demo](./assets/scroll-synced-tabbar-demo.gif )
+  <img src="./assets/scroll-synced-tabbar-demo.gif" width="400" />
 
 
 ---
