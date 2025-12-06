@@ -7,8 +7,8 @@
 
 import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import OTPInput from './src/components/OTPInput';
 import ScrollSyncTabBar from './src/components/ScrollSyncTabBar';
+import ScrollAdaptiveStickyFooter from './src/components/ScrollAdaptiveStickyFooter';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -16,9 +16,10 @@ function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={{flex:1}}>
+      <View style={{ flex: 1 }}>
         {/* <OTPInput digits={5} onChange={()=>console.log("onChange")}/> */}
-        <ScrollSyncTabBar />
+        {/* <ScrollSyncTabBar /> */}
+        <ScrollAdaptiveStickyFooter />
       </View>
     </View>
   );
